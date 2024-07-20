@@ -45,6 +45,9 @@ export class UserBehaviorModelingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: UserBehaviorModelingCreateInput,
+  })
   async createUserBehaviorModeling(
     @common.Body() data: UserBehaviorModelingCreateInput
   ): Promise<UserBehaviorModeling> {
@@ -126,6 +129,9 @@ export class UserBehaviorModelingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: UserBehaviorModelingUpdateInput,
   })
   async updateUserBehaviorModeling(
     @common.Param() params: UserBehaviorModelingWhereUniqueInput,

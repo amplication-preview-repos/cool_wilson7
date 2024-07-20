@@ -45,6 +45,9 @@ export class PredictiveScalingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PredictiveScalingCreateInput,
+  })
   async createPredictiveScaling(
     @common.Body() data: PredictiveScalingCreateInput
   ): Promise<PredictiveScaling> {
@@ -126,6 +129,9 @@ export class PredictiveScalingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PredictiveScalingUpdateInput,
   })
   async updatePredictiveScaling(
     @common.Param() params: PredictiveScalingWhereUniqueInput,

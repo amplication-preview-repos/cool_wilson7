@@ -45,6 +45,9 @@ export class ContinuousAuthenticationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ContinuousAuthenticationCreateInput,
+  })
   async createContinuousAuthentication(
     @common.Body() data: ContinuousAuthenticationCreateInput
   ): Promise<ContinuousAuthentication> {
@@ -129,6 +132,9 @@ export class ContinuousAuthenticationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ContinuousAuthenticationUpdateInput,
   })
   async updateContinuousAuthentication(
     @common.Param() params: ContinuousAuthenticationWhereUniqueInput,

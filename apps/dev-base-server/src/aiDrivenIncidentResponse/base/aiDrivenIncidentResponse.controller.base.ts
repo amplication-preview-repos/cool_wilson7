@@ -45,6 +45,9 @@ export class AiDrivenIncidentResponseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AiDrivenIncidentResponseCreateInput,
+  })
   async createAiDrivenIncidentResponse(
     @common.Body() data: AiDrivenIncidentResponseCreateInput
   ): Promise<AiDrivenIncidentResponse> {
@@ -129,6 +132,9 @@ export class AiDrivenIncidentResponseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AiDrivenIncidentResponseUpdateInput,
   })
   async updateAiDrivenIncidentResponse(
     @common.Param() params: AiDrivenIncidentResponseWhereUniqueInput,

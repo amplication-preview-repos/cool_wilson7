@@ -45,6 +45,9 @@ export class DataLakeIntegrationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DataLakeIntegrationCreateInput,
+  })
   async createDataLakeIntegration(
     @common.Body() data: DataLakeIntegrationCreateInput
   ): Promise<DataLakeIntegration> {
@@ -126,6 +129,9 @@ export class DataLakeIntegrationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DataLakeIntegrationUpdateInput,
   })
   async updateDataLakeIntegration(
     @common.Param() params: DataLakeIntegrationWhereUniqueInput,

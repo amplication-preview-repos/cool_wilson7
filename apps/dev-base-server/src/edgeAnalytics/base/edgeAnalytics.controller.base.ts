@@ -45,6 +45,9 @@ export class EdgeAnalyticsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: EdgeAnalyticsCreateInput,
+  })
   async createEdgeAnalytics(
     @common.Body() data: EdgeAnalyticsCreateInput
   ): Promise<EdgeAnalytics> {
@@ -126,6 +129,9 @@ export class EdgeAnalyticsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: EdgeAnalyticsUpdateInput,
   })
   async updateEdgeAnalytics(
     @common.Param() params: EdgeAnalyticsWhereUniqueInput,

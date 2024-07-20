@@ -45,6 +45,9 @@ export class AutomatedPiiDetectionControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedPiiDetectionCreateInput,
+  })
   async createAutomatedPiiDetection(
     @common.Body() data: AutomatedPiiDetectionCreateInput
   ): Promise<AutomatedPiiDetection> {
@@ -126,6 +129,9 @@ export class AutomatedPiiDetectionControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedPiiDetectionUpdateInput,
   })
   async updateAutomatedPiiDetection(
     @common.Param() params: AutomatedPiiDetectionWhereUniqueInput,

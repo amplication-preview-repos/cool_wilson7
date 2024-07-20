@@ -45,6 +45,9 @@ export class GraphQlSupportControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: GraphQlSupportCreateInput,
+  })
   async createGraphQlSupport(
     @common.Body() data: GraphQlSupportCreateInput
   ): Promise<GraphQlSupport> {
@@ -126,6 +129,9 @@ export class GraphQlSupportControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: GraphQlSupportUpdateInput,
   })
   async updateGraphQlSupport(
     @common.Param() params: GraphQlSupportWhereUniqueInput,

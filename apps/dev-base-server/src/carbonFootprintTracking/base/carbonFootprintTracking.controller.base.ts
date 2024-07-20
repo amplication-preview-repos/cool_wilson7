@@ -45,6 +45,9 @@ export class CarbonFootprintTrackingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CarbonFootprintTrackingCreateInput,
+  })
   async createCarbonFootprintTracking(
     @common.Body() data: CarbonFootprintTrackingCreateInput
   ): Promise<CarbonFootprintTracking> {
@@ -129,6 +132,9 @@ export class CarbonFootprintTrackingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CarbonFootprintTrackingUpdateInput,
   })
   async updateCarbonFootprintTracking(
     @common.Param() params: CarbonFootprintTrackingWhereUniqueInput,

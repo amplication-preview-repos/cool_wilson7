@@ -45,6 +45,9 @@ export class AutomatedComplianceChecksControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedComplianceChecksCreateInput,
+  })
   async createAutomatedComplianceChecks(
     @common.Body() data: AutomatedComplianceChecksCreateInput
   ): Promise<AutomatedComplianceChecks> {
@@ -129,6 +132,9 @@ export class AutomatedComplianceChecksControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedComplianceChecksUpdateInput,
   })
   async updateAutomatedComplianceChecks(
     @common.Param() params: AutomatedComplianceChecksWhereUniqueInput,

@@ -45,6 +45,9 @@ export class CollaborativeCodingEnvironmentsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CollaborativeCodingEnvironmentsCreateInput,
+  })
   async createCollaborativeCodingEnvironments(
     @common.Body() data: CollaborativeCodingEnvironmentsCreateInput
   ): Promise<CollaborativeCodingEnvironments> {
@@ -129,6 +132,9 @@ export class CollaborativeCodingEnvironmentsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CollaborativeCodingEnvironmentsUpdateInput,
   })
   async updateCollaborativeCodingEnvironments(
     @common.Param() params: CollaborativeCodingEnvironmentsWhereUniqueInput,

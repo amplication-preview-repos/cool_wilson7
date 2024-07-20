@@ -45,6 +45,9 @@ export class StreamProcessingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: StreamProcessingCreateInput,
+  })
   async createStreamProcessing(
     @common.Body() data: StreamProcessingCreateInput
   ): Promise<StreamProcessing> {
@@ -126,6 +129,9 @@ export class StreamProcessingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: StreamProcessingUpdateInput,
   })
   async updateStreamProcessing(
     @common.Param() params: StreamProcessingWhereUniqueInput,

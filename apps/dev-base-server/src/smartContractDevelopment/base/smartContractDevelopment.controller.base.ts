@@ -45,6 +45,9 @@ export class SmartContractDevelopmentControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: SmartContractDevelopmentCreateInput,
+  })
   async createSmartContractDevelopment(
     @common.Body() data: SmartContractDevelopmentCreateInput
   ): Promise<SmartContractDevelopment> {
@@ -129,6 +132,9 @@ export class SmartContractDevelopmentControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: SmartContractDevelopmentUpdateInput,
   })
   async updateSmartContractDevelopment(
     @common.Param() params: SmartContractDevelopmentWhereUniqueInput,

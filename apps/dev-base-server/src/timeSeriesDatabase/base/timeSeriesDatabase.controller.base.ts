@@ -45,6 +45,9 @@ export class TimeSeriesDatabaseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: TimeSeriesDatabaseCreateInput,
+  })
   async createTimeSeriesDatabase(
     @common.Body() data: TimeSeriesDatabaseCreateInput
   ): Promise<TimeSeriesDatabase> {
@@ -126,6 +129,9 @@ export class TimeSeriesDatabaseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: TimeSeriesDatabaseUpdateInput,
   })
   async updateTimeSeriesDatabase(
     @common.Param() params: TimeSeriesDatabaseWhereUniqueInput,

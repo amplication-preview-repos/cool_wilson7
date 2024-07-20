@@ -45,6 +45,9 @@ export class GraphDatabaseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: GraphDatabaseCreateInput,
+  })
   async createGraphDatabase(
     @common.Body() data: GraphDatabaseCreateInput
   ): Promise<GraphDatabase> {
@@ -126,6 +129,9 @@ export class GraphDatabaseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: GraphDatabaseUpdateInput,
   })
   async updateGraphDatabase(
     @common.Param() params: GraphDatabaseWhereUniqueInput,

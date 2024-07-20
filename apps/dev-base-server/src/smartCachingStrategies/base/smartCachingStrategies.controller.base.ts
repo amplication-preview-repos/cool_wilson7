@@ -45,6 +45,9 @@ export class SmartCachingStrategiesControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: SmartCachingStrategiesCreateInput,
+  })
   async createSmartCachingStrategies(
     @common.Body() data: SmartCachingStrategiesCreateInput
   ): Promise<SmartCachingStrategies> {
@@ -129,6 +132,9 @@ export class SmartCachingStrategiesControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: SmartCachingStrategiesUpdateInput,
   })
   async updateSmartCachingStrategies(
     @common.Param() params: SmartCachingStrategiesWhereUniqueInput,

@@ -45,6 +45,9 @@ export class DataRetentionPoliciesControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DataRetentionPoliciesCreateInput,
+  })
   async createDataRetentionPolicies(
     @common.Body() data: DataRetentionPoliciesCreateInput
   ): Promise<DataRetentionPolicies> {
@@ -126,6 +129,9 @@ export class DataRetentionPoliciesControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DataRetentionPoliciesUpdateInput,
   })
   async updateDataRetentionPolicies(
     @common.Param() params: DataRetentionPoliciesWhereUniqueInput,

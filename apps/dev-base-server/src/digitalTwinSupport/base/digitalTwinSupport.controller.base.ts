@@ -45,6 +45,9 @@ export class DigitalTwinSupportControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DigitalTwinSupportCreateInput,
+  })
   async createDigitalTwinSupport(
     @common.Body() data: DigitalTwinSupportCreateInput
   ): Promise<DigitalTwinSupport> {
@@ -126,6 +129,9 @@ export class DigitalTwinSupportControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DigitalTwinSupportUpdateInput,
   })
   async updateDigitalTwinSupport(
     @common.Param() params: DigitalTwinSupportWhereUniqueInput,

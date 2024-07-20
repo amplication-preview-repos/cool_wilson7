@@ -45,6 +45,9 @@ export class VoiceControlledDevelopmentControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: VoiceControlledDevelopmentCreateInput,
+  })
   async createVoiceControlledDevelopment(
     @common.Body() data: VoiceControlledDevelopmentCreateInput
   ): Promise<VoiceControlledDevelopment> {
@@ -129,6 +132,9 @@ export class VoiceControlledDevelopmentControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: VoiceControlledDevelopmentUpdateInput,
   })
   async updateVoiceControlledDevelopment(
     @common.Param() params: VoiceControlledDevelopmentWhereUniqueInput,

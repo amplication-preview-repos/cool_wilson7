@@ -45,6 +45,9 @@ export class AutomatedFeatureEngineeringControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedFeatureEngineeringCreateInput,
+  })
   async createAutomatedFeatureEngineering(
     @common.Body() data: AutomatedFeatureEngineeringCreateInput
   ): Promise<AutomatedFeatureEngineering> {
@@ -129,6 +132,9 @@ export class AutomatedFeatureEngineeringControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedFeatureEngineeringUpdateInput,
   })
   async updateAutomatedFeatureEngineering(
     @common.Param() params: AutomatedFeatureEngineeringWhereUniqueInput,

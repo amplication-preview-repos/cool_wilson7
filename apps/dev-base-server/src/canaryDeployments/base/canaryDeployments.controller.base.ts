@@ -45,6 +45,9 @@ export class CanaryDeploymentsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CanaryDeploymentsCreateInput,
+  })
   async createCanaryDeployments(
     @common.Body() data: CanaryDeploymentsCreateInput
   ): Promise<CanaryDeployments> {
@@ -126,6 +129,9 @@ export class CanaryDeploymentsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CanaryDeploymentsUpdateInput,
   })
   async updateCanaryDeployments(
     @common.Param() params: CanaryDeploymentsWhereUniqueInput,

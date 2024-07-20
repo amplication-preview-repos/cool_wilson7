@@ -45,6 +45,9 @@ export class DataLineageTrackingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DataLineageTrackingCreateInput,
+  })
   async createDataLineageTracking(
     @common.Body() data: DataLineageTrackingCreateInput
   ): Promise<DataLineageTracking> {
@@ -126,6 +129,9 @@ export class DataLineageTrackingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DataLineageTrackingUpdateInput,
   })
   async updateDataLineageTracking(
     @common.Param() params: DataLineageTrackingWhereUniqueInput,

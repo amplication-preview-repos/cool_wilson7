@@ -45,6 +45,9 @@ export class HomomorphicEncryptionControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: HomomorphicEncryptionCreateInput,
+  })
   async createHomomorphicEncryption(
     @common.Body() data: HomomorphicEncryptionCreateInput
   ): Promise<HomomorphicEncryption> {
@@ -126,6 +129,9 @@ export class HomomorphicEncryptionControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: HomomorphicEncryptionUpdateInput,
   })
   async updateHomomorphicEncryption(
     @common.Param() params: HomomorphicEncryptionWhereUniqueInput,

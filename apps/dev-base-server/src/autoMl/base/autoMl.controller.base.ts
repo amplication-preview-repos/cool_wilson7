@@ -45,6 +45,9 @@ export class AutoMlControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutoMlCreateInput,
+  })
   async createAutoMl(@common.Body() data: AutoMlCreateInput): Promise<AutoMl> {
     return await this.service.createAutoMl({
       data: data,
@@ -122,6 +125,9 @@ export class AutoMlControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutoMlUpdateInput,
   })
   async updateAutoMl(
     @common.Param() params: AutoMlWhereUniqueInput,

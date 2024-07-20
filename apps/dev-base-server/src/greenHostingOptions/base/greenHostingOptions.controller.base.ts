@@ -45,6 +45,9 @@ export class GreenHostingOptionsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: GreenHostingOptionsCreateInput,
+  })
   async createGreenHostingOptions(
     @common.Body() data: GreenHostingOptionsCreateInput
   ): Promise<GreenHostingOptions> {
@@ -126,6 +129,9 @@ export class GreenHostingOptionsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: GreenHostingOptionsUpdateInput,
   })
   async updateGreenHostingOptions(
     @common.Param() params: GreenHostingOptionsWhereUniqueInput,

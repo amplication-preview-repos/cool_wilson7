@@ -45,6 +45,9 @@ export class PersonalizedUserJourneysControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PersonalizedUserJourneysCreateInput,
+  })
   async createPersonalizedUserJourneys(
     @common.Body() data: PersonalizedUserJourneysCreateInput
   ): Promise<PersonalizedUserJourneys> {
@@ -129,6 +132,9 @@ export class PersonalizedUserJourneysControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PersonalizedUserJourneysUpdateInput,
   })
   async updatePersonalizedUserJourneys(
     @common.Param() params: PersonalizedUserJourneysWhereUniqueInput,

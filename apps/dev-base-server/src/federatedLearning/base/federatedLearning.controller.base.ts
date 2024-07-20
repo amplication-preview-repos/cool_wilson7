@@ -45,6 +45,9 @@ export class FederatedLearningControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: FederatedLearningCreateInput,
+  })
   async createFederatedLearning(
     @common.Body() data: FederatedLearningCreateInput
   ): Promise<FederatedLearning> {
@@ -126,6 +129,9 @@ export class FederatedLearningControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: FederatedLearningUpdateInput,
   })
   async updateFederatedLearning(
     @common.Param() params: FederatedLearningWhereUniqueInput,

@@ -45,6 +45,9 @@ export class ChaosEngineeringToolsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ChaosEngineeringToolsCreateInput,
+  })
   async createChaosEngineeringTools(
     @common.Body() data: ChaosEngineeringToolsCreateInput
   ): Promise<ChaosEngineeringTools> {
@@ -126,6 +129,9 @@ export class ChaosEngineeringToolsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ChaosEngineeringToolsUpdateInput,
   })
   async updateChaosEngineeringTools(
     @common.Param() params: ChaosEngineeringToolsWhereUniqueInput,

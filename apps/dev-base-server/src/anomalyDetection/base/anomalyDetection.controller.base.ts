@@ -45,6 +45,9 @@ export class AnomalyDetectionControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AnomalyDetectionCreateInput,
+  })
   async createAnomalyDetection(
     @common.Body() data: AnomalyDetectionCreateInput
   ): Promise<AnomalyDetection> {
@@ -126,6 +129,9 @@ export class AnomalyDetectionControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AnomalyDetectionUpdateInput,
   })
   async updateAnomalyDetection(
     @common.Param() params: AnomalyDetectionWhereUniqueInput,

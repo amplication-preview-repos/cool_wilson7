@@ -45,6 +45,9 @@ export class DatabaseQueryOptimizationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DatabaseQueryOptimizationCreateInput,
+  })
   async createDatabaseQueryOptimization(
     @common.Body() data: DatabaseQueryOptimizationCreateInput
   ): Promise<DatabaseQueryOptimization> {
@@ -129,6 +132,9 @@ export class DatabaseQueryOptimizationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DatabaseQueryOptimizationUpdateInput,
   })
   async updateDatabaseQueryOptimization(
     @common.Param() params: DatabaseQueryOptimizationWhereUniqueInput,

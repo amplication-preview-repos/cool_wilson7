@@ -45,6 +45,9 @@ export class PasswordlessAuthenticationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PasswordlessAuthenticationCreateInput,
+  })
   async createPasswordlessAuthentication(
     @common.Body() data: PasswordlessAuthenticationCreateInput
   ): Promise<PasswordlessAuthentication> {
@@ -129,6 +132,9 @@ export class PasswordlessAuthenticationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PasswordlessAuthenticationUpdateInput,
   })
   async updatePasswordlessAuthentication(
     @common.Param() params: PasswordlessAuthenticationWhereUniqueInput,

@@ -45,6 +45,9 @@ export class StatefulServerlessControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: StatefulServerlessCreateInput,
+  })
   async createStatefulServerless(
     @common.Body() data: StatefulServerlessCreateInput
   ): Promise<StatefulServerless> {
@@ -126,6 +129,9 @@ export class StatefulServerlessControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: StatefulServerlessUpdateInput,
   })
   async updateStatefulServerless(
     @common.Param() params: StatefulServerlessWhereUniqueInput,

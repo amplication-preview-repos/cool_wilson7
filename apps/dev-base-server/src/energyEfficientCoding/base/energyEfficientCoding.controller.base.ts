@@ -45,6 +45,9 @@ export class EnergyEfficientCodingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: EnergyEfficientCodingCreateInput,
+  })
   async createEnergyEfficientCoding(
     @common.Body() data: EnergyEfficientCodingCreateInput
   ): Promise<EnergyEfficientCoding> {
@@ -126,6 +129,9 @@ export class EnergyEfficientCodingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: EnergyEfficientCodingUpdateInput,
   })
   async updateEnergyEfficientCoding(
     @common.Param() params: EnergyEfficientCodingWhereUniqueInput,

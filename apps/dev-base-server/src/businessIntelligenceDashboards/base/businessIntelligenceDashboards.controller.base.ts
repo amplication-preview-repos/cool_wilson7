@@ -45,6 +45,9 @@ export class BusinessIntelligenceDashboardsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: BusinessIntelligenceDashboardsCreateInput,
+  })
   async createBusinessIntelligenceDashboards(
     @common.Body() data: BusinessIntelligenceDashboardsCreateInput
   ): Promise<BusinessIntelligenceDashboards> {
@@ -129,6 +132,9 @@ export class BusinessIntelligenceDashboardsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: BusinessIntelligenceDashboardsUpdateInput,
   })
   async updateBusinessIntelligenceDashboards(
     @common.Param() params: BusinessIntelligenceDashboardsWhereUniqueInput,

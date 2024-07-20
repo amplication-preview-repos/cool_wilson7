@@ -45,6 +45,9 @@ export class PredictiveAnalyticsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PredictiveAnalyticsCreateInput,
+  })
   async createPredictiveAnalytics(
     @common.Body() data: PredictiveAnalyticsCreateInput
   ): Promise<PredictiveAnalytics> {
@@ -126,6 +129,9 @@ export class PredictiveAnalyticsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PredictiveAnalyticsUpdateInput,
   })
   async updatePredictiveAnalytics(
     @common.Param() params: PredictiveAnalyticsWhereUniqueInput,

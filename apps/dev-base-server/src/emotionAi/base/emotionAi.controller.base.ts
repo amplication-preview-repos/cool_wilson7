@@ -45,6 +45,9 @@ export class EmotionAiControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: EmotionAiCreateInput,
+  })
   async createEmotionAi(
     @common.Body() data: EmotionAiCreateInput
   ): Promise<EmotionAi> {
@@ -124,6 +127,9 @@ export class EmotionAiControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: EmotionAiUpdateInput,
   })
   async updateEmotionAi(
     @common.Param() params: EmotionAiWhereUniqueInput,

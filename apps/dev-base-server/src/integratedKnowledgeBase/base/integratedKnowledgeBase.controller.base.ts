@@ -45,6 +45,9 @@ export class IntegratedKnowledgeBaseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: IntegratedKnowledgeBaseCreateInput,
+  })
   async createIntegratedKnowledgeBase(
     @common.Body() data: IntegratedKnowledgeBaseCreateInput
   ): Promise<IntegratedKnowledgeBase> {
@@ -129,6 +132,9 @@ export class IntegratedKnowledgeBaseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: IntegratedKnowledgeBaseUpdateInput,
   })
   async updateIntegratedKnowledgeBase(
     @common.Param() params: IntegratedKnowledgeBaseWhereUniqueInput,

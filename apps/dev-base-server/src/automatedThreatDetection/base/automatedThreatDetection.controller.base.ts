@@ -45,6 +45,9 @@ export class AutomatedThreatDetectionControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedThreatDetectionCreateInput,
+  })
   async createAutomatedThreatDetection(
     @common.Body() data: AutomatedThreatDetectionCreateInput
   ): Promise<AutomatedThreatDetection> {
@@ -129,6 +132,9 @@ export class AutomatedThreatDetectionControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedThreatDetectionUpdateInput,
   })
   async updateAutomatedThreatDetection(
     @common.Param() params: AutomatedThreatDetectionWhereUniqueInput,

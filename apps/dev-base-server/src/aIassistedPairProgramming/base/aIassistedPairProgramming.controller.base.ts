@@ -45,6 +45,9 @@ export class AIassistedPairProgrammingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AIassistedPairProgrammingCreateInput,
+  })
   async createAIassistedPairProgramming(
     @common.Body() data: AIassistedPairProgrammingCreateInput
   ): Promise<AIassistedPairProgramming> {
@@ -129,6 +132,9 @@ export class AIassistedPairProgrammingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AIassistedPairProgrammingUpdateInput,
   })
   async updateAIassistedPairProgramming(
     @common.Param() params: AIassistedPairProgrammingWhereUniqueInput,

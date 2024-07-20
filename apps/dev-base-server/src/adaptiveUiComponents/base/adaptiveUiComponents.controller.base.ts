@@ -45,6 +45,9 @@ export class AdaptiveUiComponentsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AdaptiveUiComponentsCreateInput,
+  })
   async createAdaptiveUiComponents(
     @common.Body() data: AdaptiveUiComponentsCreateInput
   ): Promise<AdaptiveUiComponents> {
@@ -126,6 +129,9 @@ export class AdaptiveUiComponentsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AdaptiveUiComponentsUpdateInput,
   })
   async updateAdaptiveUiComponents(
     @common.Param() params: AdaptiveUiComponentsWhereUniqueInput,

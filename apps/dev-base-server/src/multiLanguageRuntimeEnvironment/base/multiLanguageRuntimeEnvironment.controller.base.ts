@@ -45,6 +45,9 @@ export class MultiLanguageRuntimeEnvironmentControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: MultiLanguageRuntimeEnvironmentCreateInput,
+  })
   async createMultiLanguageRuntimeEnvironment(
     @common.Body() data: MultiLanguageRuntimeEnvironmentCreateInput
   ): Promise<MultiLanguageRuntimeEnvironment> {
@@ -129,6 +132,9 @@ export class MultiLanguageRuntimeEnvironmentControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: MultiLanguageRuntimeEnvironmentUpdateInput,
   })
   async updateMultiLanguageRuntimeEnvironment(
     @common.Param() params: MultiLanguageRuntimeEnvironmentWhereUniqueInput,

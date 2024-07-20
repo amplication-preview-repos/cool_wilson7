@@ -45,6 +45,9 @@ export class SchemaDesignerControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: SchemaDesignerCreateInput,
+  })
   async createSchemaDesigner(
     @common.Body() data: SchemaDesignerCreateInput
   ): Promise<SchemaDesigner> {
@@ -126,6 +129,9 @@ export class SchemaDesignerControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: SchemaDesignerUpdateInput,
   })
   async updateSchemaDesigner(
     @common.Param() params: SchemaDesignerWhereUniqueInput,

@@ -45,6 +45,9 @@ export class PlatformSpecificOptimizationsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PlatformSpecificOptimizationsCreateInput,
+  })
   async createPlatformSpecificOptimizations(
     @common.Body() data: PlatformSpecificOptimizationsCreateInput
   ): Promise<PlatformSpecificOptimizations> {
@@ -129,6 +132,9 @@ export class PlatformSpecificOptimizationsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PlatformSpecificOptimizationsUpdateInput,
   })
   async updatePlatformSpecificOptimizations(
     @common.Param() params: PlatformSpecificOptimizationsWhereUniqueInput,

@@ -45,6 +45,9 @@ export class BlockchainAuditTrailsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: BlockchainAuditTrailsCreateInput,
+  })
   async createBlockchainAuditTrails(
     @common.Body() data: BlockchainAuditTrailsCreateInput
   ): Promise<BlockchainAuditTrails> {
@@ -126,6 +129,9 @@ export class BlockchainAuditTrailsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: BlockchainAuditTrailsUpdateInput,
   })
   async updateBlockchainAuditTrails(
     @common.Param() params: BlockchainAuditTrailsWhereUniqueInput,

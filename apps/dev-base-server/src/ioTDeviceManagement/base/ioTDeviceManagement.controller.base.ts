@@ -45,6 +45,9 @@ export class IoTDeviceManagementControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: IoTDeviceManagementCreateInput,
+  })
   async createIoTDeviceManagement(
     @common.Body() data: IoTDeviceManagementCreateInput
   ): Promise<IoTDeviceManagement> {
@@ -126,6 +129,9 @@ export class IoTDeviceManagementControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: IoTDeviceManagementUpdateInput,
   })
   async updateIoTDeviceManagement(
     @common.Param() params: IoTDeviceManagementWhereUniqueInput,

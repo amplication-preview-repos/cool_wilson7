@@ -45,6 +45,9 @@ export class ApiDesignControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ApiDesignCreateInput,
+  })
   async createApiDesign(
     @common.Body() data: ApiDesignCreateInput
   ): Promise<ApiDesign> {
@@ -124,6 +127,9 @@ export class ApiDesignControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ApiDesignUpdateInput,
   })
   async updateApiDesign(
     @common.Param() params: ApiDesignWhereUniqueInput,

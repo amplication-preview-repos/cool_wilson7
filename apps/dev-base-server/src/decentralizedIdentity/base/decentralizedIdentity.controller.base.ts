@@ -45,6 +45,9 @@ export class DecentralizedIdentityControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DecentralizedIdentityCreateInput,
+  })
   async createDecentralizedIdentity(
     @common.Body() data: DecentralizedIdentityCreateInput
   ): Promise<DecentralizedIdentity> {
@@ -126,6 +129,9 @@ export class DecentralizedIdentityControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DecentralizedIdentityUpdateInput,
   })
   async updateDecentralizedIdentity(
     @common.Param() params: DecentralizedIdentityWhereUniqueInput,

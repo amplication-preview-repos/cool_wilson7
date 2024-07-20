@@ -45,6 +45,9 @@ export class IoTDataIngestionControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: IoTDataIngestionCreateInput,
+  })
   async createIoTDataIngestion(
     @common.Body() data: IoTDataIngestionCreateInput
   ): Promise<IoTDataIngestion> {
@@ -126,6 +129,9 @@ export class IoTDataIngestionControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: IoTDataIngestionUpdateInput,
   })
   async updateIoTDataIngestion(
     @common.Param() params: IoTDataIngestionWhereUniqueInput,

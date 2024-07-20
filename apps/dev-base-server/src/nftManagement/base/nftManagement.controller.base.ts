@@ -45,6 +45,9 @@ export class NftManagementControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: NftManagementCreateInput,
+  })
   async createNftManagement(
     @common.Body() data: NftManagementCreateInput
   ): Promise<NftManagement> {
@@ -126,6 +129,9 @@ export class NftManagementControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: NftManagementUpdateInput,
   })
   async updateNftManagement(
     @common.Param() params: NftManagementWhereUniqueInput,

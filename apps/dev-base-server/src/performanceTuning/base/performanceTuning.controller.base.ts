@@ -45,6 +45,9 @@ export class PerformanceTuningControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: PerformanceTuningCreateInput,
+  })
   async createPerformanceTuning(
     @common.Body() data: PerformanceTuningCreateInput
   ): Promise<PerformanceTuning> {
@@ -126,6 +129,9 @@ export class PerformanceTuningControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: PerformanceTuningUpdateInput,
   })
   async updatePerformanceTuning(
     @common.Param() params: PerformanceTuningWhereUniqueInput,

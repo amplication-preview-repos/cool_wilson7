@@ -45,6 +45,9 @@ export class MultiModelDatabaseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: MultiModelDatabaseCreateInput,
+  })
   async createMultiModelDatabase(
     @common.Body() data: MultiModelDatabaseCreateInput
   ): Promise<MultiModelDatabase> {
@@ -126,6 +129,9 @@ export class MultiModelDatabaseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: MultiModelDatabaseUpdateInput,
   })
   async updateMultiModelDatabase(
     @common.Param() params: MultiModelDatabaseWhereUniqueInput,

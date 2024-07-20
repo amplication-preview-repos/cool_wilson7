@@ -45,6 +45,9 @@ export class ContinuousLearningControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ContinuousLearningCreateInput,
+  })
   async createContinuousLearning(
     @common.Body() data: ContinuousLearningCreateInput
   ): Promise<ContinuousLearning> {
@@ -126,6 +129,9 @@ export class ContinuousLearningControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ContinuousLearningUpdateInput,
   })
   async updateContinuousLearning(
     @common.Param() params: ContinuousLearningWhereUniqueInput,

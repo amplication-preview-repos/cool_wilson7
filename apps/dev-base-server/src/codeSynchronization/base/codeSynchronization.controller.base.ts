@@ -45,6 +45,9 @@ export class CodeSynchronizationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CodeSynchronizationCreateInput,
+  })
   async createCodeSynchronization(
     @common.Body() data: CodeSynchronizationCreateInput
   ): Promise<CodeSynchronization> {
@@ -126,6 +129,9 @@ export class CodeSynchronizationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CodeSynchronizationUpdateInput,
   })
   async updateCodeSynchronization(
     @common.Param() params: CodeSynchronizationWhereUniqueInput,

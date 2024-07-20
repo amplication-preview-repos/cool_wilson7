@@ -45,6 +45,9 @@ export class ComplexEventProcessingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ComplexEventProcessingCreateInput,
+  })
   async createComplexEventProcessing(
     @common.Body() data: ComplexEventProcessingCreateInput
   ): Promise<ComplexEventProcessing> {
@@ -129,6 +132,9 @@ export class ComplexEventProcessingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ComplexEventProcessingUpdateInput,
   })
   async updateComplexEventProcessing(
     @common.Param() params: ComplexEventProcessingWhereUniqueInput,

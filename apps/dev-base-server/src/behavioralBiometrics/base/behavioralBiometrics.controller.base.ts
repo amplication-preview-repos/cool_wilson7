@@ -45,6 +45,9 @@ export class BehavioralBiometricsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: BehavioralBiometricsCreateInput,
+  })
   async createBehavioralBiometrics(
     @common.Body() data: BehavioralBiometricsCreateInput
   ): Promise<BehavioralBiometrics> {
@@ -126,6 +129,9 @@ export class BehavioralBiometricsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: BehavioralBiometricsUpdateInput,
   })
   async updateBehavioralBiometrics(
     @common.Param() params: BehavioralBiometricsWhereUniqueInput,

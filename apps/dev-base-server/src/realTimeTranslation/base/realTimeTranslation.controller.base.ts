@@ -45,6 +45,9 @@ export class RealTimeTranslationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: RealTimeTranslationCreateInput,
+  })
   async createRealTimeTranslation(
     @common.Body() data: RealTimeTranslationCreateInput
   ): Promise<RealTimeTranslation> {
@@ -126,6 +129,9 @@ export class RealTimeTranslationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: RealTimeTranslationUpdateInput,
   })
   async updateRealTimeTranslation(
     @common.Param() params: RealTimeTranslationWhereUniqueInput,

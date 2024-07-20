@@ -45,6 +45,9 @@ export class ContextAwareHelpControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ContextAwareHelpCreateInput,
+  })
   async createContextAwareHelp(
     @common.Body() data: ContextAwareHelpCreateInput
   ): Promise<ContextAwareHelp> {
@@ -126,6 +129,9 @@ export class ContextAwareHelpControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ContextAwareHelpUpdateInput,
   })
   async updateContextAwareHelp(
     @common.Param() params: ContextAwareHelpWhereUniqueInput,

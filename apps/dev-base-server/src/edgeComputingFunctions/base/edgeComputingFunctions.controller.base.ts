@@ -45,6 +45,9 @@ export class EdgeComputingFunctionsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: EdgeComputingFunctionsCreateInput,
+  })
   async createEdgeComputingFunctions(
     @common.Body() data: EdgeComputingFunctionsCreateInput
   ): Promise<EdgeComputingFunctions> {
@@ -129,6 +132,9 @@ export class EdgeComputingFunctionsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: EdgeComputingFunctionsUpdateInput,
   })
   async updateEdgeComputingFunctions(
     @common.Param() params: EdgeComputingFunctionsWhereUniqueInput,

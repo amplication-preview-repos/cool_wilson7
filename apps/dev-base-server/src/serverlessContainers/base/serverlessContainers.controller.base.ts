@@ -45,6 +45,9 @@ export class ServerlessContainersControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ServerlessContainersCreateInput,
+  })
   async createServerlessContainers(
     @common.Body() data: ServerlessContainersCreateInput
   ): Promise<ServerlessContainers> {
@@ -126,6 +129,9 @@ export class ServerlessContainersControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ServerlessContainersUpdateInput,
   })
   async updateServerlessContainers(
     @common.Param() params: ServerlessContainersWhereUniqueInput,

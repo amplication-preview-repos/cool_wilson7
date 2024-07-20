@@ -45,6 +45,9 @@ export class GamificationElementsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: GamificationElementsCreateInput,
+  })
   async createGamificationElements(
     @common.Body() data: GamificationElementsCreateInput
   ): Promise<GamificationElements> {
@@ -126,6 +129,9 @@ export class GamificationElementsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: GamificationElementsUpdateInput,
   })
   async updateGamificationElements(
     @common.Param() params: GamificationElementsWhereUniqueInput,

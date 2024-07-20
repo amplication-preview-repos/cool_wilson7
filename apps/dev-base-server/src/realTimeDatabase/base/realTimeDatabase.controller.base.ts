@@ -45,6 +45,9 @@ export class RealTimeDatabaseControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: RealTimeDatabaseCreateInput,
+  })
   async createRealTimeDatabase(
     @common.Body() data: RealTimeDatabaseCreateInput
   ): Promise<RealTimeDatabase> {
@@ -126,6 +129,9 @@ export class RealTimeDatabaseControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: RealTimeDatabaseUpdateInput,
   })
   async updateRealTimeDatabase(
     @common.Param() params: RealTimeDatabaseWhereUniqueInput,

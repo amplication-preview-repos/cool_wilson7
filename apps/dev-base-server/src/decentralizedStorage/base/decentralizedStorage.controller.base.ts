@@ -45,6 +45,9 @@ export class DecentralizedStorageControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: DecentralizedStorageCreateInput,
+  })
   async createDecentralizedStorage(
     @common.Body() data: DecentralizedStorageCreateInput
   ): Promise<DecentralizedStorage> {
@@ -126,6 +129,9 @@ export class DecentralizedStorageControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: DecentralizedStorageUpdateInput,
   })
   async updateDecentralizedStorage(
     @common.Param() params: DecentralizedStorageWhereUniqueInput,

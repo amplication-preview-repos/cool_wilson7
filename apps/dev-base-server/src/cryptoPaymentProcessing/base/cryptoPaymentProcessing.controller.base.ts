@@ -45,6 +45,9 @@ export class CryptoPaymentProcessingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CryptoPaymentProcessingCreateInput,
+  })
   async createCryptoPaymentProcessing(
     @common.Body() data: CryptoPaymentProcessingCreateInput
   ): Promise<CryptoPaymentProcessing> {
@@ -129,6 +132,9 @@ export class CryptoPaymentProcessingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CryptoPaymentProcessingUpdateInput,
   })
   async updateCryptoPaymentProcessing(
     @common.Param() params: CryptoPaymentProcessingWhereUniqueInput,

@@ -45,6 +45,9 @@ export class AutomatedEtlPipelinesControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedEtlPipelinesCreateInput,
+  })
   async createAutomatedEtlPipelines(
     @common.Body() data: AutomatedEtlPipelinesCreateInput
   ): Promise<AutomatedEtlPipelines> {
@@ -126,6 +129,9 @@ export class AutomatedEtlPipelinesControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedEtlPipelinesUpdateInput,
   })
   async updateAutomatedEtlPipelines(
     @common.Param() params: AutomatedEtlPipelinesWhereUniqueInput,

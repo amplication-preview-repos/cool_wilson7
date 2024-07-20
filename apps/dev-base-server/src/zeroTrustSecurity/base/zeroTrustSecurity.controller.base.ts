@@ -45,6 +45,9 @@ export class ZeroTrustSecurityControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ZeroTrustSecurityCreateInput,
+  })
   async createZeroTrustSecurity(
     @common.Body() data: ZeroTrustSecurityCreateInput
   ): Promise<ZeroTrustSecurity> {
@@ -126,6 +129,9 @@ export class ZeroTrustSecurityControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ZeroTrustSecurityUpdateInput,
   })
   async updateZeroTrustSecurity(
     @common.Param() params: ZeroTrustSecurityWhereUniqueInput,

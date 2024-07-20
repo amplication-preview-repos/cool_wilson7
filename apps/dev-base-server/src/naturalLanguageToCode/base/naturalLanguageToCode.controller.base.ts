@@ -45,6 +45,9 @@ export class NaturalLanguageToCodeControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: NaturalLanguageToCodeCreateInput,
+  })
   async createNaturalLanguageToCode(
     @common.Body() data: NaturalLanguageToCodeCreateInput
   ): Promise<NaturalLanguageToCode> {
@@ -126,6 +129,9 @@ export class NaturalLanguageToCodeControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: NaturalLanguageToCodeUpdateInput,
   })
   async updateNaturalLanguageToCode(
     @common.Param() params: NaturalLanguageToCodeWhereUniqueInput,

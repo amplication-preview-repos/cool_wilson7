@@ -45,6 +45,9 @@ export class AutomatedCodeReviewControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AutomatedCodeReviewCreateInput,
+  })
   async createAutomatedCodeReview(
     @common.Body() data: AutomatedCodeReviewCreateInput
   ): Promise<AutomatedCodeReview> {
@@ -126,6 +129,9 @@ export class AutomatedCodeReviewControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AutomatedCodeReviewUpdateInput,
   })
   async updateAutomatedCodeReview(
     @common.Param() params: AutomatedCodeReviewWhereUniqueInput,

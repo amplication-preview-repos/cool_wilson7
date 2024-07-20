@@ -45,6 +45,9 @@ export class VisualProgrammingInterfacesControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: VisualProgrammingInterfacesCreateInput,
+  })
   async createVisualProgrammingInterfaces(
     @common.Body() data: VisualProgrammingInterfacesCreateInput
   ): Promise<VisualProgrammingInterfaces> {
@@ -129,6 +132,9 @@ export class VisualProgrammingInterfacesControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: VisualProgrammingInterfacesUpdateInput,
   })
   async updateVisualProgrammingInterfaces(
     @common.Param() params: VisualProgrammingInterfacesWhereUniqueInput,

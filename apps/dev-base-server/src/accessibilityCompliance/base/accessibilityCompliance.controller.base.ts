@@ -45,6 +45,9 @@ export class AccessibilityComplianceControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AccessibilityComplianceCreateInput,
+  })
   async createAccessibilityCompliance(
     @common.Body() data: AccessibilityComplianceCreateInput
   ): Promise<AccessibilityCompliance> {
@@ -129,6 +132,9 @@ export class AccessibilityComplianceControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AccessibilityComplianceUpdateInput,
   })
   async updateAccessibilityCompliance(
     @common.Param() params: AccessibilityComplianceWhereUniqueInput,

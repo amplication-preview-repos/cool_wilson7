@@ -45,6 +45,9 @@ export class ExplainableAiToolsControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ExplainableAiToolsCreateInput,
+  })
   async createExplainableAiTools(
     @common.Body() data: ExplainableAiToolsCreateInput
   ): Promise<ExplainableAiTools> {
@@ -126,6 +129,9 @@ export class ExplainableAiToolsControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ExplainableAiToolsUpdateInput,
   })
   async updateExplainableAiTools(
     @common.Param() params: ExplainableAiToolsWhereUniqueInput,

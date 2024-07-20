@@ -45,6 +45,9 @@ export class AiCodeAssistanceControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: AiCodeAssistanceCreateInput,
+  })
   async createAiCodeAssistance(
     @common.Body() data: AiCodeAssistanceCreateInput
   ): Promise<AiCodeAssistance> {
@@ -126,6 +129,9 @@ export class AiCodeAssistanceControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: AiCodeAssistanceUpdateInput,
   })
   async updateAiCodeAssistance(
     @common.Param() params: AiCodeAssistanceWhereUniqueInput,

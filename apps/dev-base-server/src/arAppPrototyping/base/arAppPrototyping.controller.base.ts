@@ -45,6 +45,9 @@ export class ArAppPrototypingControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ArAppPrototypingCreateInput,
+  })
   async createArAppPrototyping(
     @common.Body() data: ArAppPrototypingCreateInput
   ): Promise<ArAppPrototyping> {
@@ -126,6 +129,9 @@ export class ArAppPrototypingControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ArAppPrototypingUpdateInput,
   })
   async updateArAppPrototyping(
     @common.Param() params: ArAppPrototypingWhereUniqueInput,

@@ -45,6 +45,9 @@ export class GitOpsWorkflowControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: GitOpsWorkflowCreateInput,
+  })
   async createGitOpsWorkflow(
     @common.Body() data: GitOpsWorkflowCreateInput
   ): Promise<GitOpsWorkflow> {
@@ -126,6 +129,9 @@ export class GitOpsWorkflowControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: GitOpsWorkflowUpdateInput,
   })
   async updateGitOpsWorkflow(
     @common.Param() params: GitOpsWorkflowWhereUniqueInput,

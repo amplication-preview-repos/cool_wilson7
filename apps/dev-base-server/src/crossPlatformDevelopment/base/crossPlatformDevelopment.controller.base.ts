@@ -45,6 +45,9 @@ export class CrossPlatformDevelopmentControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CrossPlatformDevelopmentCreateInput,
+  })
   async createCrossPlatformDevelopment(
     @common.Body() data: CrossPlatformDevelopmentCreateInput
   ): Promise<CrossPlatformDevelopment> {
@@ -129,6 +132,9 @@ export class CrossPlatformDevelopmentControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CrossPlatformDevelopmentUpdateInput,
   })
   async updateCrossPlatformDevelopment(
     @common.Param() params: CrossPlatformDevelopmentWhereUniqueInput,

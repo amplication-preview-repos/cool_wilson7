@@ -45,6 +45,9 @@ export class CrossPlatformTestingAutomationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: CrossPlatformTestingAutomationCreateInput,
+  })
   async createCrossPlatformTestingAutomation(
     @common.Body() data: CrossPlatformTestingAutomationCreateInput
   ): Promise<CrossPlatformTestingAutomation> {
@@ -129,6 +132,9 @@ export class CrossPlatformTestingAutomationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: CrossPlatformTestingAutomationUpdateInput,
   })
   async updateCrossPlatformTestingAutomation(
     @common.Param() params: CrossPlatformTestingAutomationWhereUniqueInput,

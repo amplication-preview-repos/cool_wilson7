@@ -45,6 +45,9 @@ export class ApiMonetizationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ApiMonetizationCreateInput,
+  })
   async createApiMonetization(
     @common.Body() data: ApiMonetizationCreateInput
   ): Promise<ApiMonetization> {
@@ -126,6 +129,9 @@ export class ApiMonetizationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ApiMonetizationUpdateInput,
   })
   async updateApiMonetization(
     @common.Param() params: ApiMonetizationWhereUniqueInput,

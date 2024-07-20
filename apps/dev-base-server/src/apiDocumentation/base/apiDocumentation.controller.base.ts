@@ -45,6 +45,9 @@ export class ApiDocumentationControllerBase {
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
   })
+  @swagger.ApiBody({
+    type: ApiDocumentationCreateInput,
+  })
   async createApiDocumentation(
     @common.Body() data: ApiDocumentationCreateInput
   ): Promise<ApiDocumentation> {
@@ -126,6 +129,9 @@ export class ApiDocumentationControllerBase {
   })
   @swagger.ApiForbiddenResponse({
     type: errors.ForbiddenException,
+  })
+  @swagger.ApiBody({
+    type: ApiDocumentationUpdateInput,
   })
   async updateApiDocumentation(
     @common.Param() params: ApiDocumentationWhereUniqueInput,
